@@ -1,5 +1,5 @@
-﻿using PetStar.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using PetStar.Models;
 
 namespace PetStar.Data
 {
@@ -13,4 +13,4 @@ namespace PetStar.Data
         public DbSet<Animal> Animais { get; set; }
 
     }
-} 
+}

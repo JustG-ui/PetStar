@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-
-namespace PetStar.Models
+﻿namespace PetStar.Models
 {
     public class Animal
     {

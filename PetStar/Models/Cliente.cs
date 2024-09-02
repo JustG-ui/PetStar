@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace PetStar.Models
+﻿namespace PetStar.Models
 {
     public class Cliente
     {
