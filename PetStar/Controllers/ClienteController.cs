@@ -27,7 +27,7 @@ namespace PetStar.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Create([Bind("Id","Nome", "Email", "Telefone")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("Id", "Nome", "Email", "Telefone")] Cliente cliente)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace PetStar.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Edit(long? id, [Bind("Nome", "Email", "Telefone")] Cliente cliente)
+        public async Task<IActionResult> Edit(long? id, [Bind("Id", "Nome", "Email", "Telefone")] Cliente cliente)
         {
             if (id != cliente.Id)
             {

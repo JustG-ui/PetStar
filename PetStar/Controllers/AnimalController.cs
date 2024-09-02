@@ -27,7 +27,7 @@ namespace PetStar.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Create([Bind("Id", "Nome", "Idade","Especie", "CódigoAnimal")] Animal animal)
+        public async Task<IActionResult> Create([Bind("Id", "Nome", "Idade", "Especie", "CódigoAnimal")] Animal animal)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace PetStar.Controllers
             return View(animal);
         }
 
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(long id)
         {
             if (id == null)
             {
@@ -59,7 +59,7 @@ namespace PetStar.Controllers
             return View(animal);
 
         }
-        public bool AnimalExists(int? id)
+        private bool AnimalExists(long? id)
         {
             return _context.Animais.Any(cli => cli.Id == id);
         }
@@ -67,7 +67,7 @@ namespace PetStar.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Edit(int? id, [Bind("Nome", "Idade", "Especie", "CódigoAnimal")] Animal animal)
+        public async Task<IActionResult> Edit(long? id, [Bind("Id", "Nome", "Idade", "Especie", "CódigoAnimal")] Animal animal)
         {
             if (id != animal.Id)
             {
@@ -96,7 +96,7 @@ namespace PetStar.Controllers
             return View(animal);
 
         }
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
             {
@@ -110,7 +110,7 @@ namespace PetStar.Controllers
             return View(animal);
         }
 
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
             {
@@ -125,7 +125,7 @@ namespace PetStar.Controllers
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int? id)
+        public async Task<ActionResult> DeleteConfirmed(long? id)
         {
             var animal = await _context.Animais.SingleOrDefaultAsync(i => i.Id == id);
             _context.Animais.Remove(animal);
